@@ -1,0 +1,6 @@
+<h1>id: <%= @shop.id %> の詳細</h1>
+
+<p><%= @shop.content %></p>
+
+<%= link_to '一覧に戻る', shops_path %>
+<%= link_to 'この紹介店を編集する', edit_shop_path(@shop) %>
