@@ -2,7 +2,7 @@
 
 <ul>
   <% @shops.each do |shop| %>
-    <li><%= link_to shop.id, shop %> : <%= shop.content %></li>
+    <li><%= link_to shop.id, shop %> :<%= shop.title %></li>
   <% end %>
 </ul>
 
