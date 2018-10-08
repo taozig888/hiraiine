@@ -1,10 +1,5 @@
 <h1>id: <%= @shop.id %> の紹介編集ページ</h1>
 
-<%= form_for(@shop) do |f| %>
-  <%= f.label :content, '紹介店' %>
-  <%= f.text_field :content %>
-
-  <%= f.submit '投稿' %>
-<% end %>
+<%= render 'form', shop: @shop %>
 
 <%= link_to '一覧に戻る', shops_path %>

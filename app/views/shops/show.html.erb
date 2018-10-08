@@ -4,3 +4,4 @@
 
 <%= link_to '一覧に戻る', shops_path %>
 <%= link_to 'この紹介店を編集する', edit_shop_path(@shop) %>
+<%= link_to 'この紹介店を削除する', @shop, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>

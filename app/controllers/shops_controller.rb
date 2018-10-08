@@ -28,16 +28,30 @@ class ShopsController < ApplicationController
   end
 
   def update
+    @shop = Shop.find(params[:id])
+
+    if @shop.update(shop_params)
+      flash[:success] = '紹介店は正常に更新されました'
+      redirect_to @shop
+    else
+      flash.now[:danger] = '紹介店は更新されませんでした'
+      render :edit
+    end
   end
 
   def destroy
+    @shop = Shop.find(params[:id])
+    @shop.destroy
+
+    flash[:success] = '紹介店は正常に削除されました'
+    redirect_to shops_url
   end
   
   private
 
   # Strong Parameter
   def shop_params
-    params.require(:shop).permit(:content)
+    params.require(:shop).permit(:content, :title)
   end
   
 end
