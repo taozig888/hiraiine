@@ -1,2 +1,8 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<h1>id: <%= @topic.id %> の詳細ページ</h1>
+
+<p>トピック: <%= @topic.title %></p>
+<p>トピック内容: <%= @topic.content %></p>
+
+<%= link_to '一覧に戻る', topics_path %>
+<%= link_to 'このトピックを編集する', edit_topic_path(@topic) %>
+<%= link_to 'このトピックを削除する', @topic, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>

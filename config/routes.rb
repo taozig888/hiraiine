@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   resources :shops
   
   resources :topics
-  
 end
