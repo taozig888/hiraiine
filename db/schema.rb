@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181012072616) do
+ActiveRecord::Schema.define(version: 20181015073304) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "comment"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20181012072616) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.text     "content",    limit: 65535
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "posts", "topics"
