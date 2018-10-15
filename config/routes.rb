@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   
   resources :topics
   post 'topics/:id' , to: 'topics#destroy' #10/15「削除できない」ルーティングエラーはこれで解消された。
+  resources :posts
 end
