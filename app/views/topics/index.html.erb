@@ -1,11 +1,16 @@
-<h1>トピック一覧</h1>
+<h1>平井掲示板</h1>
+<h3>平井限定の掲示板。<br>
+平井についての告知や質問等、なんでもOKです！</h3>
+<br>
+
+<h4>トピック一覧</h4>
 <ul>
   <% @topics.each do |topic| %>
     <li><%= link_to topic.title, topic %></li>
   <% end %>
 </ul>
 
-<h1>トピック新規作成</h1>
+<h4>トピック新規作成</h4>
 
 <%= form_for(@topic) do |f| %>
   <%= f.label :title, 'タイトル' %>

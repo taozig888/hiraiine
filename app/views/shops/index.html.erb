@@ -1,9 +1,12 @@
-<h1>お店一覧</h1>
+<h1>平井のお店</h1>
+<h3>平井にあるオススメのお店を紹介してください！<br></h3>
+<br>
 
-<ul>
+<h3>お店一覧</h3>
+<h4><ul>
   <% @shops.each do |shop| %>
-    <li><%= link_to shop.id, shop %> :<%= shop.title %></li>
+    <li><%= link_to shop.title, shop %></li>
   <% end %>
-</ul>
+</h4></ul>
 
 <%= link_to '新規紹介店の投稿', new_shop_path %>
