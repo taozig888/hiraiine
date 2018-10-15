@@ -22,13 +22,14 @@ class TopicsController < ApplicationController
       redirect_to @topic
     else
       flash.now[:danger] = 'トピックが投稿されませんでした'
-      render :new
+      redirect_to topics_path
     end
   end
   
-  def delete
-    @topic = Topic.find(params[:id])
+  def destroy
+    set_topic
     @topic.destroy
+    flash[:success] = 'Message は正常に削除されました'
     redirect_to topics_path
   end
  

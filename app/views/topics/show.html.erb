@@ -4,5 +4,4 @@
 <p>トピック内容: <%= @topic.content %></p>
 
 <%= link_to '一覧に戻る', topics_path %>
-<%= link_to 'このトピックを編集する', edit_topic_path(@topic) %>
-<%= link_to 'このトピックを削除する', @topic, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to 'このトピックを削除する', @topic, method: :destroy, data: { confirm: '本当に削除してよろしいですか？' } %>

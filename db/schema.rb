@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181011064507) do
+ActiveRecord::Schema.define(version: 20181012072616) do
+
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "comment"
+    t.integer  "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["topic_id"], name: "index_posts_on_topic_id", using: :btree
+  end
 
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",    limit: 65535
@@ -26,4 +35,5 @@ ActiveRecord::Schema.define(version: 20181011064507) do
     t.text     "content",    limit: 65535
   end
 
+  add_foreign_key "posts", "topics"
 end
