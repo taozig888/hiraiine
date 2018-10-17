@@ -1,8 +1,6 @@
 class TopicsController < ApplicationController
-  
-  def new
-    
-  end 
+  before_action :require_user_logged_in, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   def show
     set_topic
@@ -12,13 +10,12 @@ class TopicsController < ApplicationController
   end
   
   def index
-    @topics = Topic.all
+    @topics = Topic.order(created_at: :desc).page(params[:page]).per(10)
     @topic = Topic.new
   end
 
   def create
-    @topic = Topic.new(topic_params)
-
+    @topic = current_user.topics.build(topic_params)
     if @topic.save
       flash[:success] = ' トピックが正常に投稿されました'
       redirect_to @topic
@@ -43,6 +40,13 @@ class TopicsController < ApplicationController
 
   def topic_params
     params.require(:topic).permit(:content, :title)
+  end
+  
+  def correct_user
+    @topic = current_user.topics.find_by(id: params[:id])
+    unless @topic
+      redirect_to root_url
+    end
   end
   
 end
