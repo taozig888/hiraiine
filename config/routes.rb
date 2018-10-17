@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new' #見栄え良くしてる
   resources :users
+  
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy' #見栄え良くしている
 end
