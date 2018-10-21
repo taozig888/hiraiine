@@ -1,20 +1,43 @@
-<h1>平井掲示板</h1>
-<h3>平井限定の掲示板。<br>
-平井についての告知や質問等、なんでもOKです！</h3>
-<br>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>平井掲示板</title>
+        <style type="text/css">
+        h1{
+        border-bottom: solid 3px gray;
+          }
+        h1{
+        font-size: 25px;
+         }
+        p{
+        font-size: 16px;
+         }
+        </style>
+    </head>
+ <body>
+   <h1>平井掲示板</h1>
+   <p>平井限定の掲示板。<br>
+    平井についての告知や質問等、なんでもOKです！</p>
+    <br>
 
-<h4>トピック一覧</h4>
-<ul>
-  <% @topics.each do |topic| %>
-    <li><%= link_to topic.title, topic %></li>
-  <% end %>
-</ul>
+    <h4>トピック一覧</h4>
+    <ul>
+      <% @topics.each do |topic| %>
+        <li><%= link_to topic.title, topic %></li>
+      <% end %>
+    </ul><br>
 
-<h4>トピック新規作成</h4>
+    <h4>トピック新規作成</h4>
 
-<%= form_for(@topic) do |f| %>
-  <%= f.label :title, 'タイトル' %><br><%= f.text_field :title, :size=>"50" %>
-  <br>
-  <%= f.label :content, 'トピック内容' %><br><%= f.text_area :content, :size=>"70x11" %>
-  <%= f.submit '投稿' %>
-<% end %>
+    <%= form_for(@topic) do |f| %>
+      <%= f.label :title, 'タイトル' %><br>
+      <%= f.text_field :title, :size=>"50" %>
+      <br>
+      <%= f.label :content, 'トピック内容' %><br>
+      <%= f.text_area :content, class: "form-control", style: "width:800px;", style: "height:400px;" %>
+      
+      <%= f.submit '投稿' %>
+    <% end %>
+ </body>
+</html>

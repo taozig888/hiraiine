@@ -1,12 +1,32 @@
-<h1>平井のお店</h1>
-<h3>平井にある、知る人ぞ知るお店はありますか？ぜひ紹介してください！<br></h3>
-<br>
-※投稿にはユーザー登録が必要です。
-<h3>お店一覧</h3>
-<h4><ul>
-  <% @shops.each do |shop| %>
-    <li><%= link_to shop.title, shop %></li>
-  <% end %>
-</h4></ul>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>平井のお店</title>
+        <style type="text/css">
+        h1{
+        border-bottom: solid 3px gray;
+          }
+        h1{
+        font-size: 25px;
+         }
+        p{
+        font-size: 16px;
+         }
+        </style>
+    </head>
+ <body>
+   <h1>平井のお店</h1>
+  <p>平井にある、知る人ぞ知るお店はありますか？ぜひ紹介してください！<br></p>
+   ※投稿にはユーザー登録が必要です。
+   <h3>お店一覧</h3>
+   <h4><ul>
+      <% @shops.each do |shop| %>
+        <li><%= link_to shop.title, shop %></li>
+      <% end %>
+   </h4></ul>
 
-<%= link_to '新規紹介店の投稿', new_shop_path %>
+   <%= link_to '新規紹介店の投稿', new_shop_path, class: "btn btn-default" %>
+
+ </body>
+</html>

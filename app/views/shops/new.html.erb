@@ -1,5 +1,22 @@
-<h1>新規作成ページ</h1>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>新規投稿</title>
+        <style type="text/css">
+        h1{
+        font-size: 25px;
+         }
+        p{
+        font-size: 16px;
+         }
+        </style>
+    </head>
+ <body>
+   <h1>新規作成</h1>
 
-<%= render 'form', shop: @shop %>
+   <%= render 'form', shop: @shop %>
 
-<%= link_to '一覧に戻る', shops_path %>
+   <%= link_to '一覧に戻る', shops_path %>
+ </body>
+</html>

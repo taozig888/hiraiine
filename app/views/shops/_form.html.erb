@@ -11,10 +11,13 @@
   <% end %>
 
   <%= f.label :title, '紹介店' %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: "form-control", style: "width:800px;", style: "height:40px;" %>
+
 <br>
   <%= f.label :content, '紹介文' %>
-  <%= f.text_field :content %>
-  
-  <%= f.submit '投稿' %>
+  <%= f.text_area :content, class: "form-control", style: "width:800px;", style: "height:400px;" %>
+  <br>
+  <%= f.submit  '投稿', class: "btn btn-default" %>
+  <br>
 <% end %>
+ <br>
