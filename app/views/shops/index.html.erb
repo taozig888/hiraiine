@@ -13,20 +13,36 @@
         p{
         font-size: 16px;
          }
+        h2{
+          position: relative;
+          padding: 0.6em;
+          background: #DDDDDD;
+          font-size: 18px;
+          }
+        p{
+        font-size: 16px;
+         }
         </style>
     </head>
  <body>
    <h1>平井のお店</h1>
   <p>平井にある、知る人ぞ知るお店はありますか？ぜひ紹介してください！<br></p>
-   ※投稿にはユーザー登録が必要です。
-   <h3>お店一覧</h3>
-   <h4><ul>
-      <% @shops.each do |shop| %>
-        <li><%= link_to shop.title, shop %></li>
-      <% end %>
-   </h4></ul>
+   ※投稿にはユーザー登録が必要です。<br>
+   <h2>お店一覧</h2> 
+   
 
-   <%= link_to '新規紹介店の投稿', new_shop_path, class: "btn btn-default" %>
+   <div class="row">
+        <div class="col-md-6">
+          <h4><ul>
+            <% @shops.each do |shop| %>
+              <li><%= link_to shop.title, shop %></li>
+            <% end %>
+          </h4></ul>
+        </div>
+        <div class="col-md-6">
+          <p class="text-right"><%= link_to '新規投稿', new_shop_path, class: "btn btn-default" %></p>
+        </div>
+   </div>
 
  </body>
 </html>
