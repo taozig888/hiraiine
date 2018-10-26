@@ -2,5 +2,8 @@
 <p><%= @shop.content %></p>
 
 <%= link_to '一覧に戻る', shops_path %>
-<%= link_to 'この紹介店を編集する', edit_shop_path(@shop) %>
-<%= link_to 'この紹介店を削除する', @shop, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+
+<% if current_user&.shops&.find_by(id: @shop.id) %> <!--投稿したユーザーのみ、削除ボタンが表示される。--!>
+    <%= link_to 'この紹介を編集する', edit_shop_path(@shop) %>
+    <%= link_to 'この紹介を削除する', @shop, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %> 
+<% end %>
