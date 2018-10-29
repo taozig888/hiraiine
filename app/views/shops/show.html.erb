@@ -1,4 +1,5 @@
 <p>店名: <%= @shop.title %></p>
+<p>投稿者: <%= @shop.user.name %></p>
 <p><%= image_tag(@shop.picture_url) if @shop.picture.present? %></p>
 <p><%= @shop.content %></p>
 
