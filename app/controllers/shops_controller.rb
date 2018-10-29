@@ -54,7 +54,7 @@ class ShopsController < ApplicationController
 
   # Strong Parameter
   def shop_params
-    params.require(:shop).permit(:content, :title)
+    params.require(:shop).permit(:content, :title, :picture)
   end
   
   def correct_user #あるユーザーしか操作（destroy edit update）できない。

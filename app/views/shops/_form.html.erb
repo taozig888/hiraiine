@@ -17,6 +17,8 @@
   <%= f.label :content, '紹介文' %>
   <%= f.text_area :content, class: "form-control", style: "width:800px;", style: "height:400px;" %>
   <br>
+  <%= f.label :image, '画像' %>
+  <%= f.file_field :picture, id: :shop_picture %>
   <%= f.submit  '投稿', class: "btn btn-default" %>
   <br>
 <% end %>
