@@ -23,7 +23,7 @@
         
         <p>件名：  <%= @topic.title %></p>
         <p>投稿者: <%= @topic.user.name %></p>
-        <p>投稿内容：<%= @topic.content %></p>
+        <p>投稿内容：<%= simple_format(@topic.content) %></p>
         <%= link_to '一覧に戻る', topics_path %>
         <% if current_user&.topics&.find_by(id: @topic.id) %> <!--投稿したユーザーのみ、削除ボタンが表示される。--!>
         <%= link_to 'このトピックを削除する', @topic, method: :destroy, data: { confirm: '本当に削除してよろしいですか？' } %>
