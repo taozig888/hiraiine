@@ -2,7 +2,6 @@ class ShopsController < ApplicationController
   
   before_action :require_user_logged_in, only: [:new, :create, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
-  #３行目は、ログインしていればでき操作の塊で、４行目は、その中でもあるユーザーしか操作できないかたまり？
   
   def index
     @shops = Shop.order(created_at: :desc).page(params[:page]).per(10)

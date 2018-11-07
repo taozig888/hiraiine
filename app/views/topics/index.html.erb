@@ -1,36 +1,22 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>平井掲示板</title>
-        <style type="text/css">
-        h1{
-        border-bottom: solid 3px gray;
-          }
-        h1{
-        font-size: 25px;
-         }
-        p{
-        font-size: 16px;
-         }
-        h2{
-         position: relative;
-         padding: 0.6em;
-         background: #DDDDDD;
-         font-size: 18px;
-         }
-          </style>
-    </head>
- <body>
+<title>平井掲示板</title>
+<style>h1{border-bottom: solid 3px gray;</style>
    <h1>平井掲示板</h1>
    <p>平井限定の掲示板。<br>
     平井についての告知や質問等、なんでもOKです！</p>
-
+    <style>
+      h2{
+         position: relative;
+        padding: 0.6em;
+        background: #DDDDDD;
+        font-size: 18px;
+         }
+    </style>
     <h2>トピック一覧</h2>
     <ul>
       <font size="4">
           <% @topics.each do |topic| %>
-        <li><%= link_to topic.title, topic %></li>
+        <li><%= link_to topic.title, topic %>  (<%= topic.posts.count %>)</li>
+        
       <% end %>
       </font>
     </ul><br>
@@ -43,8 +29,5 @@
       <br>
       <%= f.label :content, 'トピック内容' %><br>
       <%= f.text_area :content, class: "form-control", style: "width:800px;", style: "height:400px;" %>
-      
       <%= f.submit '投稿' %>
     <% end %>
- </body>
-</html>
